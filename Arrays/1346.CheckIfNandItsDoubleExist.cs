@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+//https://leetcode.com/problems/check-if-n-and-its-double-exist/description/
 namespace Arrays
 {
     public class CheckIfExistClass
