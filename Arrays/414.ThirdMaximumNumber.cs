@@ -27,7 +27,6 @@ namespace Arrays
                     que.EnqueueDequeue(el, el);
                 }
             }
-
             return que.Count != 3 ? res : que.Peek();
         }
     }

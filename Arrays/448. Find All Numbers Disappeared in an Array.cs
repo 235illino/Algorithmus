@@ -21,7 +21,6 @@ namespace Arrays
                     index = temp - 1;
                 }
             }
-
             for (int i = 0; i < array.Length; i++)
             {
                 if (array[i] != 0)
