@@ -7,7 +7,109 @@ using System.Threading.Tasks;
 //https://leetcode.com/problems/design-linked-list/description/
 namespace Linked_List
 {
-    public class MyLinkedList
+    public class DoublyMyLinkedList
+    {
+        private ListNode head;
+        private ListNode tail;
+        int size;
+
+        public class ListNode
+        {
+            public int val;
+            public ListNode? next;
+            public ListNode? priv;
+            public ListNode(int val = 0, ListNode? next = null, ListNode? priv = null)
+            {
+                this.val = val;
+                this.next = next;
+                this.priv = priv;
+            }
+        }
+
+        public DoublyMyLinkedList()
+        {
+            head = new ListNode();
+            tail = new ListNode();
+            head.next = tail;
+            tail.priv = head;
+            size = 0;
+        }
+
+        public int Get(int index)
+        {
+            if(index < 0 || index >= size)
+                return -1;
+            ListNode? curr = null;
+            if (index < size / 2)
+                curr = GetNodeAtIndexFromHead(index, head);
+            else
+                curr = GetNodeAtIndexFromTail(index, tail);            
+            return curr.val;
+        }
+
+        private ListNode GetNodeAtIndexFromTail(int index, ListNode? tail)
+        {
+            var curr = tail;
+            for (int i = 0; i < size - index; i++)
+                curr = curr?.priv;
+            return curr;
+        }
+
+        private static ListNode GetNodeAtIndexFromHead(int index, ListNode? head)
+        {
+            var curr = head;
+            for (int i = 0; i <= index; i++)
+                curr = curr?.next;
+            return curr;
+        }
+
+        public void AddAtHead(int val)
+        {
+            size++;
+            var toAdd = new ListNode(val, head.next, head);
+            head.next.priv = toAdd;
+            head.next = toAdd;
+        }
+
+        public void AddAtTail(int val)
+        {
+            size++;
+            var toAdd = new ListNode(val, tail, tail.priv);
+            tail.priv.next = toAdd;
+            tail.priv = toAdd;
+        }
+
+        public void AddAtIndex(int index, int val)
+        {
+            if (index < 0 || index >= size)
+                return;
+            
+            ListNode? curr = null;
+            if (index < size / 2)
+                curr = GetNodeAtIndexFromHead(index, head);
+            else
+                curr = GetNodeAtIndexFromTail(index, tail);
+            size++;
+            ListNode toAdd = new ListNode(val, curr, curr.priv);
+            curr.priv.next = toAdd;
+            curr.priv = toAdd;
+        }
+
+        public void DeleteAtIndex(int index)
+        {
+            if (index < 0 || index >= size)
+                return;
+            ListNode? curr = null;
+            if (index < size / 2)
+                curr = GetNodeAtIndexFromHead(index, head);
+            else
+                curr = GetNodeAtIndexFromTail(index, tail);
+            size--;
+            curr.priv.next = curr.next;
+            curr.next.priv = curr.priv;
+        }
+    }
+    public class SinglyMyLinkedList
     {
         private ListNode head;
         private ListNode tail;
@@ -23,7 +125,7 @@ namespace Linked_List
             }
         }
 
-        public MyLinkedList()
+        public SinglyMyLinkedList()
         {
             head = new ListNode();
             tail = head;
