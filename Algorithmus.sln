@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HashTable", "Hash Table\Has
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Linked List", "Linked List\Linked List\Linked List.csproj", "{92567A18-777A-450E-83D6-4893F9A99AF7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Design", "Design\Design.csproj", "{CCF500D2-EF48-44F4-9669-C0836251238D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,8 +35,15 @@ Global
 		{92567A18-777A-450E-83D6-4893F9A99AF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{92567A18-777A-450E-83D6-4893F9A99AF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{92567A18-777A-450E-83D6-4893F9A99AF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCF500D2-EF48-44F4-9669-C0836251238D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCF500D2-EF48-44F4-9669-C0836251238D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCF500D2-EF48-44F4-9669-C0836251238D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCF500D2-EF48-44F4-9669-C0836251238D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2CE6AF6B-558D-4A40-BA7B-B4D71A2BEC25}
 	EndGlobalSection
 EndGlobal
